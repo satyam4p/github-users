@@ -34,32 +34,19 @@
     position: absolute;
     bottom: 0%;
     left: 0%;
-    /* right: -70%; */
     align-content: center;
     width: 100%;
     font-size: small;
-    background-color: rgba(15, 15, 15, 0.486);
+    background-color: rgba(15, 15, 15, 0.76);
     border-radius: 10px;
     padding: 5px;
     visibility: hidden;
     z-index: 100;
     color: #fff;
 }
-
 .card-content:hover .tooltip-text{
     visibility: visible;
 }
-.tooltip-text::after{
-    content: " ";
-    position: absolute;
-    bottom: 100%;  /* At the top of the tooltip */
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent rgba(0, 0, 0, 0.24) transparent;
-}
-
 .card-content--image{
     width: 100%;
 }
@@ -92,4 +79,3 @@
     color: #fff;
     background-color: rgba(24, 23, 23, 0.562);
 }
-

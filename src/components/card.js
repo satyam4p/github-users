@@ -22,7 +22,7 @@ const Card =()=>{
                     <div className="card--delete" onClick={e=>handleDelete(e,user.id)}>
                         X
                     </div>
-                    <a href={user.html_url} target="_blank" rel="noopener noreferrer" >
+                    <a className="user-link"href={user.html_url} target="_blank" rel="noopener noreferrer" >
                     <div className="card-content--image">
                         <img src={user.avatar_url} alt="user profile"/>
                     </div>
