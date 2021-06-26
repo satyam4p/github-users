@@ -1,0 +1,15 @@
+.login-container{
+    width: 20%;
+    height: 2rem;
+}
+.login-input{
+    width: 80%;
+    min-height: 1.8rem;
+    font-size: small;
+}
+.login-btn{
+    padding: 2px;
+    height: 1.8rem;
+    margin-left: 5px;
+    width: 15%;
+}

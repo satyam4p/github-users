@@ -1,0 +1,15 @@
+.sorting-container{
+    display: flex;
+    margin-top: 10px;
+}
+.sorting-list{
+    display: flex;
+    list-style: none;
+}
+.sorting-list li{
+    display: inline-block;
+    padding: 0px 10px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+}
