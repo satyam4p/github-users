@@ -26,7 +26,7 @@ export const UserContainer = styled("div")(() => ({
   justifyContent: "space-between",
 }));
 
-export const UserListContainer = styled("a")(() => ({
+export const UserListContainer = styled("div")(() => ({
   display: "flex",
   flexDirection: "row",
   flexWrap: "wrap",

@@ -5,7 +5,7 @@ import {
   UserListContainer,
   UserList,
 } from "./styled/style";
-import { Typography } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Component = ({ page, usersList, paginatePrevous, paginateNext }) => {
@@ -15,16 +15,19 @@ const Component = ({ page, usersList, paginatePrevous, paginateNext }) => {
         Github Users
       </Typography>
       <div style={{ paddingLeft: "2rem" }}>
-        <button
-          style={{ padding: "0.5rem", marginRight: "1rem" }}
+        <Button
+          sx={{ padding: "0.2rem", marginRight: "1rem", background: "" }}
           onClick={paginatePrevous}
           disabled={page === 1}
         >
           Previous
-        </button>
-        <button style={{ padding: "0.5rem" }} onClick={paginateNext}>
+        </Button>
+        <Button
+          sx={{ padding: "0.2rem", marginRight: "1rem" }}
+          onClick={paginateNext}
+        >
           Next
-        </button>
+        </Button>
       </div>
 
       <UserListContainer>

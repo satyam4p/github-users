@@ -6,7 +6,6 @@ const URL = "https://api.github.com/users";
 
 const Container = () => {
   const { userid } = useParams();
-  console.log("userid:: ", userid);
   const [user, setuser] = useState();
   const [isLoading, setLoading] = useState(false);
   const fetchUserInfo = async () => {
@@ -18,7 +17,6 @@ const Container = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      console.log("error occured while fetching user:: ", error);
     }
   };
 

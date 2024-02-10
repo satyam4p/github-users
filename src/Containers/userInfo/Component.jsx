@@ -13,7 +13,6 @@ import {
 import { Typography } from "@mui/material";
 
 const Component = ({ isLoading, userInfo }) => {
-  console.log("userInfo:: ", userInfo);
   return (
     <UserInforContainer>
       <ProfileSection>
