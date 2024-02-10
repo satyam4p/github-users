@@ -9,6 +9,7 @@ export const UserInforContainer = styled("div")(({ theme }) => ({
     flexDirection: "column",
     padding: "2rem",
     flexWrap: "wrap",
+    alignItems: "center",
   },
   display: "flex",
   flexDirection: "row",
@@ -75,8 +76,8 @@ export const FieldValue = styled(Typography)(({ theme }) => ({
 export const UserDetailsSection = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     display: "flex",
-    alignItems: "flex-start",
-    width: "100%",
+    alignItems: "center",
+    width: "50%%",
     padding: "0.5rem",
   },
   display: "flex",
