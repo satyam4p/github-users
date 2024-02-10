@@ -48,19 +48,19 @@ const Component = ({ isLoading, userInfo }) => {
         </FieldContainer>
         <FieldContainer>
           <FieldLabel>Company</FieldLabel>
-          <FieldValue>{userInfo?.company}</FieldValue>
+          <FieldValue>{userInfo?.company || "Not present"}</FieldValue>
         </FieldContainer>
         <FieldContainer>
           <FieldLabel>Blog</FieldLabel>
           <FieldValue>
             <a target="_blank" href={userInfo?.blog} rel="noreferrer">
-              {userInfo?.blog || " "}
+              {userInfo?.blog}
             </a>
           </FieldValue>
         </FieldContainer>
         <FieldContainer>
           <FieldLabel>Location</FieldLabel>
-          <FieldValue>{userInfo?.location}</FieldValue>
+          <FieldValue>{userInfo?.location || "Not present"}</FieldValue>
         </FieldContainer>
       </UserDetailsSection>
     </UserInforContainer>
