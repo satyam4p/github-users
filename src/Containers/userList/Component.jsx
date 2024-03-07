@@ -5,10 +5,20 @@ import {
   UserListContainer,
   UserList,
 } from "./styled/style";
-import { Typography, Button } from "@mui/material";
+import { Typography, Button, Input } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const Component = ({ page, usersList, paginatePrevous, paginateNext }) => {
+const Component = ({
+  page,
+  usersList,
+  paginatePrevous,
+  paginateNext,
+  setName,
+  setLocation,
+  name,
+  location,
+  handleSearch,
+}) => {
   return (
     <UserList>
       <Typography align="center" variant="h4">
@@ -28,6 +38,17 @@ const Component = ({ page, usersList, paginatePrevous, paginateNext }) => {
         >
           Next
         </Button>
+        <Input
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+          placeholder="enter name"
+        />
+        <Input
+          onChange={(e) => setLocation(e.target.value)}
+          value={location}
+          placeholder="enter locationb"
+        />
+        <Button onClick={handleSearch}>Search</Button>
       </div>
 
       <UserListContainer>
