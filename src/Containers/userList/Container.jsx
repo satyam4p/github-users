@@ -5,8 +5,8 @@ const URL = "https://api.github.com/users";
 const PERPAGE = 20;
 
 const Container = () => {
-  const [users, setUsers] = useState([]);
-  const [page, setPage] = useState(1);
+  const [users, setUsers] = useState();
+  const [page, setPage] = useState(0);
 
   const handlePaginatePrevious = () => {
     setPage(page - PERPAGE);
@@ -32,6 +32,8 @@ const Container = () => {
       paginateNext={handlePaginateNext}
       usersList={users}
       page={page}
+      setUsers={setUsers}
+      fetchUsers={fetchUsers}
     />
   );
 };

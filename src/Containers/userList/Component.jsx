@@ -1,14 +1,52 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   UserAvatar,
   UserContainer,
   UserListContainer,
   UserList,
 } from "./styled/style";
-import { Typography, Button } from "@mui/material";
+import { Typography, Button, Input } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const Component = ({ page, usersList, paginatePrevous, paginateNext }) => {
+const SearchUrls = {
+  name: "https://api.github.com/search/users",
+  location: "https://api.github.com/search/users",
+};
+
+const Component = ({
+  page,
+  usersList,
+  paginatePrevous,
+  paginateNext,
+  setUsers,
+  fetchUsers,
+}) => {
+  const locationRef = useRef(null);
+  const nameRef = useRef(null);
+
+  const handleSearch = async () => {
+    const name = nameRef.current.value;
+    const location = locationRef.current.value;
+
+    if (name.length > 0 && location.length > 0) {
+      try {
+        let result = await fetch(
+          `${SearchUrls.name}?q=${name}+location:${location}`
+        );
+        if (result.status == 200) {
+          let resJson = await result.json();
+          if (resJson && resJson.total_count > 0) {
+            setUsers(resJson?.items);
+          }
+        }
+      } catch (error) {
+        console.error("error occured while fetching filtered response");
+      }
+    } else {
+      await fetchUsers();
+    }
+  };
+
   return (
     <UserList>
       <Typography align="center" variant="h4">
@@ -18,7 +56,7 @@ const Component = ({ page, usersList, paginatePrevous, paginateNext }) => {
         <Button
           sx={{ padding: "0.2rem", marginRight: "1rem", background: "" }}
           onClick={paginatePrevous}
-          disabled={page === 1}
+          disabled={page === 0}
         >
           Previous
         </Button>
@@ -28,6 +66,13 @@ const Component = ({ page, usersList, paginatePrevous, paginateNext }) => {
         >
           Next
         </Button>
+        <Input type="text" inputRef={nameRef} placeholder="enter name" />
+        <Input
+          type="text"
+          inputRef={locationRef}
+          placeholder="enter location"
+        />
+        <Button onClick={handleSearch}>Search</Button>
       </div>
 
       <UserListContainer>
